@@ -1,0 +1,221 @@
+﻿* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+p {
+  color: var(--cor-2);
+  margin-bottom:0px;
+}
+
+h3 {
+  color: var(--cor-2);
+}
+
+body {
+  background-color: white;
+}
+
+.h1-title {
+  color: var(--cor-1);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+  margin: 20px 0;
+  color: white;
+}
+
+.add-language-button {
+  color: var(--cor-4);
+  font-size: 24px;
+  padding-left: 12px;
+}
+
+#card-div {
+  margin: 20px 0;
+  background-color: white;
+  padding: 30px 25px;
+  border-radius: 5px;
+  width: 90%;
+  box-shadow: 2px 2px 8px 0px rgba(49, 44, 81, 0.5);
+}
+
+#card-div .input-block {
+  margin-bottom: 20px;
+}
+
+#card-div .input-block label {
+  font-size: 16px;
+  color: var(--cor-1);
+}
+
+#card-div .input-block input {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--cor-3);
+  outline-color: var(--cor-1);
+}
+
+#card-div .input-block textarea {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--cor-3);
+  outline-color: var(--cor-1);
+}
+
+#card-div .input-block select {
+  width: 100%;
+  display: block;
+  margin-top: 8px;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid var(--cor-3);
+  outline-color: var(--cor-1);
+  background-color: white;
+}
+
+#card-div .input-block input[disabled="true"]{
+  color: #999999;
+}
+
+#card-div .input-block select[disabled="true"]{
+  color: #999999;
+  background-color: #999999;
+}
+
+.div-unselected {
+  display: inline;
+  line-height: 44px;
+  border: solid 2px var(--cor-2);
+  border-radius: 2px;
+  background-color: white;
+  color: var(--cor-1);
+  margin: auto;
+  padding: 7px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.div-selected {
+  display: inline;
+  line-height: 44px;
+  border: solid 2px var(--cor-2);
+  border-radius: 2px;
+  background-color: var(--cor-2);
+  color: white;
+  margin: auto;
+  padding: 7px;
+  text-align: center;
+}
+
+#card-div .btn-login {
+  display: block;
+  min-width: 120px;
+  background-color: var(--cor-1);
+  border-color: var(--cor-1);
+  margin: auto;
+  padding: 7px;
+}
+
+#card-div .btn-continuar {
+  display: block;
+  min-width: 120px;
+  background-color: var(--cor-1);
+  border-color: var(--cor-1);
+  margin: auto;
+  padding: 7px;
+}
+
+#card-div .btn-signup {
+  display: block;
+  min-width: 120px;
+  border: solid 2px var(--cor-4);
+  background-color: white;
+  color: var(--cor-4);
+  margin: auto;
+  padding: 7px;
+  margin-top: 12px;
+}
+
+#card-div .btn-voltar {
+  display: block;
+  min-width: 120px;
+  border: solid 2px var(--cor-4);
+  background-color: white;
+  color: var(--cor-4);
+  margin: auto;
+  padding: 7px;
+  margin-top: 12px;
+}
+
+.icone-login {
+  display: block;
+  font-size: 72px;
+  text-align: center;
+  padding-top: 12px;
+  color: var(--cor-1);
+}
+
+.icone-signup {
+  display: block;
+  font-size: 52px;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: var(--cor-1);
+}
+
+.loader {
+  display: none;
+  margin: auto;
+  border: 8px solid #ddd;
+  border-radius: 50%;
+  border-top: 8px solid var(--cor-1);
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

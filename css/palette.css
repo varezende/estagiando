@@ -4,9 +4,3 @@
     --cor-3: #f0c38e;
     --cor-4: #f1aa9b;
 }
-
-.btn-primary {
-    color: #fff;
-    background-color: var(--cor-2);
-    border-color: var(--cor-1);
-}

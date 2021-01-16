@@ -1,72 +1,4 @@
-﻿body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-size: 16px;
-}
-
-.cabecalho, .rodape {	
-	width: 100%;
-	padding: 12px;
-}
-.cabecalho {	
-	background-color: var(--cor-1);
-	color: var(--cor-4);
-	font-size: 1.5rem;
-	top: 0;
-}
-.cabecalho button {
-	background-color: var(--cor-3);
-	color: var(--cor-2);
-}
-.cabecalho .div-logo {
-	width: 38px;
-	height: 38px;
-	color: var(--cor-2);
-	background-color: var(--cor-3);
-	font-size: 30px;
-	font-weight: 500;
-	text-align: center;
-	border-radius: .25rem;
-}
-.conteudo {
-	/*background-color: var(--cor-4);*/
-	width: 100%;
-}
-.conteudo .card  {
-	background-color: white;
-	margin-bottom: 12px;
-	box-shadow: 2px 2px 8px 0px rgba(49, 44, 81, 0.5);
-}
-.conteudo .card:first-child {
-	margin-top: 12px;
-}
-
-.rodape {
-	background-color: var(--cor-1);
-    color: var(--cor-4);
-	text-align: right;
-	bottom: 0;
-}
-.rodape td {
-	text-align: center;	
-    color: var(--cor-4);
-}
-.rodape td i {
-	font-size: 25px;
-}
-.rodape td i.active {
-	font-size: 25px;
-	color: var(--cor-2);
-}
-.rodape td:first-child {
-	border-right: solid var(--cor-4) 1px;
-}
-.rodape td:last-child {
-	text-align: right;
-}
-
-#div-view-empresa {
+﻿#div-view-empresa {
 	width: 100%;
 }
 #div-lista-empresa {
@@ -113,6 +45,9 @@
 	-o-transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
 	transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
 	
+	background-size: 100% auto;
+	background-repeat: no-repeat; 
+	
 	position: relative;
 }
 .div-box-empresa:first-child {
@@ -122,7 +57,7 @@
 	margin-right: 0;
 }
 .div-box-empresa.visited {
-	border: solid transparent 2px;
+	border: solid #e7e7e7 2px;
 }
 .div-box-empresa.active {
 	width: 50px;

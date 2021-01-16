@@ -1,4 +1,4 @@
-function atualizarListaDeEmpresas() {
+﻿function atualizarListaDeEmpresas() {
 	$('#div-scroll-empresa').html('');
 	listaEmpresasExibicao.forEach(function(obj){
 		renderizarEmpresa(obj);
@@ -11,7 +11,7 @@ function atualizarListaDeEmpresas() {
 function renderizarEmpresa(obj) {
 	var html = '';
 	
-	html += '<div class="div-box-empresa" style="background-image: url(\'./img/' + obj._id + '.jpg\');">';
+	html += '<div class="div-box-empresa" style="background-image: url(\'' + obj.image_base64 + '\')">';
 	if (obj.jobs) {
 		html += '	<div class="badge badge-danger">' + obj.jobs.length + '</div>';
 	}
@@ -29,10 +29,19 @@ function renderizarEmpresa(obj) {
 }
 	
 function renderizarVagas(obj) {
+	
+	var lat = 0;
+	var lon = 0;
+	if (obj.address) {
+		lat = obj.address.latitude;
+		lon = obj.address.longitude;
+	}
+	
 	var html = '';
 	
 	html += '<div class="card remaining">';
-	html += '	<iframe role="image" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.4601123482207!2d-48.26041387611728!3d-18.911017626173937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445a2066828a1%3A0x6f09b8ddadbaf8a5!2sHotel%20Mercure%20Uberlandia%20Plaza%20Shopping!5e0!3m2!1spt-BR!2sbr!4v1609872879119!5m2!1spt-BR!2sbr" width="100%" height="150" frameborder="0" style="border: solid transparent;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>';
+	//html += '	<iframe role="image" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.4601123482207!2d-48.26041387611728!3d-18.911017626173937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94a445a2066828a1%3A0x6f09b8ddadbaf8a5!2sHotel%20Mercure%20Uberlandia%20Plaza%20Shopping!5e0!3m2!1spt-BR!2sbr!4v1609872879119!5m2!1spt-BR!2sbr" width="100%" height="150" frameborder="0" style="border: solid transparent;" allowfullscreen="true" aria-hidden="false" tabindex="0"></iframe>';
+	html += '	<iframe src = "https://maps.google.com/maps?q=' + lat +',' + lon + '&hl=pt-BR;z=14&amp;output=embed"></iframe>';
 	html += '	<div class="card-body">';
 	html += '		<h4 class="card-title">' + obj.name + '</h4>';
 	html += '		<p class="card-text">' + obj.resume + '</p>';	
@@ -40,13 +49,13 @@ function renderizarVagas(obj) {
 	html += '		<table cellpadding="0" cellspacing="0" width="100%" style="margin-top: 36px;">';
 	html += '			<tr>';
 	html += '				<td width="45%">';
-	html += '					<button class="btn btn-primary" style="width: 100%;" onclick="descartarVaga(this);">';
+	html += '					<button class="btn btn-primary" style="width: 100%;">';
 	html += '						<i class="far fa-bell-slash"></i> Descartar';
 	html += '					</button>';
 	html += '				</td>';
 	html += '				<td width="10%"></td>';
 	html += '				<td width="45%">';
-	html += '					<button class="btn btn-success" style="width: 100%;" onclick="aplicarVaga(this);">';
+	html += '					<button class="btn btn-success" style="width: 100%;">';
 	html += '						<i class="fas fa-hands-helping"></i> Candidatar';
 	html += '					</button>';
 	html += '				</td>';
@@ -59,13 +68,20 @@ function renderizarVagas(obj) {
 		if (b && b.position) {
 			console.log(b.position.left);
 			if (b.position.left > 70) {
-				aplicarVaga($(this).find('button:eq(0)')[0]);
+				aplicarVaga($(this).find('button:eq(0)')[0], obj);
 			} else if (b.position.left < -70) {
 				descartarVaga($(this).find('button:eq(0)')[0]);
 			} else {
 				//$(this).css('transition', 'left .6s ease');
 				$(this).css('left', 0);
 			}
+		}
+	}).find('button').click(function() {
+		if ($(this).hasClass('btn-primary')) {
+			descartarVaga(this);
+		} else {
+			console.log('oi');
+			aplicarVaga(this, obj);
 		}
 	});
 	$('#div-view-vaga').css('height', 'calc(100% - ' + ($('#div-view-empresa').outerHeight()) + 'px)');
@@ -95,18 +111,31 @@ function filtrarEmpresas() {
 	$('form *:input').blur();
 }
 
-function descartarVaga(objHTML) {
+function descartarVaga(objHTML) {	
 	var card = $(objHTML).parent().parent().parent().parent().parent().parent();
 	$(card).removeClass('remaining');
 	$(card).hide('slide', { direction: 'left' }, 500, function() { exibirLoading(); });
 	$(card).css('top', 'inherit');
 }
 
-function aplicarVaga(objHTML) {
+function aplicarVaga(objHTML, obj) {
 	var card = $(objHTML).parent().parent().parent().parent().parent().parent();
 	$(card).removeClass('remaining');
 	$(card).hide('slide', { direction: 'right' }, 500, function() { exibirLoading(); });
 	$(card).css('top', 'inherit');
+	
+	if (obj) {
+		var aplicacoes = getCookie('aplicacoes');
+	
+		if (!aplicacoes) {
+			aplicacoes = [];
+		} else {
+			aplicacoes = JSON.parse(aplicacoes);
+		}
+		aplicacoes.push(obj);
+		
+		setCookie('aplicacoes', JSON.stringify(aplicacoes), 30) ;
+	}
 }
 
 function exibirLoading() {
@@ -142,13 +171,18 @@ function exibirFinal() {
 var listaEmpresasGeral = [];
 var listaEmpresasExibicao = [];
 $('document').ready(function() {
+	validarAcesso();	
+	
 	/* Definir alturas nos elementos na tela para não causar Scroll onde não deve. */
 	$('.conteudo').css('height', 'calc(100% - ' + ($('.cabecalho').outerHeight() + $('.rodape').outerHeight()) + 'px)');
 	
 	/* Buscar Infos do Back (Mock). */				
 	$.ajax({
-		url: '../companies.json',
-		type: 'post',
+		url: 'https://hackaton-ccr.herokuapp.com/user/company/list',
+		headers: {
+			'Authorization': 'Bearer ' + getCookie('access_token')
+		},
+		type: 'get',
 		contentType: 'application/json; charset=utf-8',
 		dataType: 'text json',
 		cache: false,

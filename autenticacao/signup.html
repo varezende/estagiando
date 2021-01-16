@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up Hackaton</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href=".\..\libs\bootstrap-5.0.0-beta1-dist\css\bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href=".\..\libs\fontawesome-free-5.15.1-web\css\all.min.css" rel="stylesheet" type="text/css" />
+    <script src=".\..\libs\jquery\jquery-3.5.1.min.js" type="text/javascript"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="autenticacao.css" />
+    <link rel="stylesheet" href="stepper.css" />
+    <link rel="stylesheet" href=".\..\css\palette.css" />
+
+    
+  </head>
+  <body>
+    <section class="form-section">
+      <div class="input-block d-inline" >
+        <img src="./../img/estagiando_logo.png" style="width: 50px;height: 50px;display: inline-block;" alt="Estagiando" />
+        <h1 class="h1-title" style="display: inline-block;vertical-align: middle;">  Cadastre-se</h1>
+
+      </div>
+
+      <div class="container">
+        <ul class="progressbar">
+          <li class="active">Dados Pessoais</li>
+          <li>Educação</li>
+          <li>Interesses</li>
+          <li>Confirmação e Senha</li>
+        </ul>
+      </div>
+
+      <div id="card-div" class="card">
+        <!-- Step 1-->
+        <form action="#" id="inputs-step-1" class="step-input-div">
+          <div class="input-block">
+            <label  style="display: inline-block;" for="signup-name">Nome<p style="color:red;display:inline-block;">*</p></label>
+            <input type="text" id="signup-name" required />
+            <label  style="display: inline-block;" for="signup-email">E-mail<p style="color:red;display:inline-block;">*</p></label>
+            <input type="email" maxlength="100" id="signup-email" required />
+            <label  style="display: inline-block;" for="signup-birth">Data de nascimento<p style="color:red;display:inline-block;">*</p></label>
+            <input type="date" id="signup-birth" required />
+            <label style="display: inline-block;"  for="signup-cpf">CPF<p style="color:red;display:inline-block;">*</p></label>
+            <input type="number" id="signup-cpf" required />
+          </div>
+          <div class="input-block">
+            <label  style="display: inline-block;" for="signup-cellphone">Celular<p style="color:red;display:inline-block;">*</p></label>
+            <input type="number" id="signup-cellphone" class="phone-input" required />
+            <label for="signup-phone">Telefone Fixo</label>
+            <input type="number" id="signup-phone" class="phone-input" />
+          </div>
+          <div class="input-block d-inline">
+            <div style="width: 75%; display: inline-block">
+              <label  style="display: inline-block;" for="signup-street">Logradouro<p style="color:red;display:inline-block;">*</p></label>
+              <input id="signup-street" maxlength="100" required />
+            </div>
+            <div style="width: 20%; display: inline-block">
+              <label  style="display: inline-block;" for="signup-number">Nº<p style="color:red;display:inline-block;">*</p></label>
+              <input type="number" min="0" step="1" max="99999999" id="signup-number" required />
+            </div>
+          </div>
+          <div class="input-block d-inline">
+            <div style="width: 30%; display: inline-block">
+              <label  style="display: inline-block;" for="signup-state">Estado<p style="color:red;display:inline-block;">*</p></label>
+              <select id="signup-state" required></select>
+            </div>
+            <div style="width: 65%; display: inline-block">
+              <label style="display: inline-block;" for="signup-city">Cidade<p style="color:red;display:inline-block;">*</p></label>
+              <select id="signup-city" required></select>
+            </div>
+          </div>
+          <div style="margin-top: 12px">
+            <button type="submit" class="btn btn-primary btn-continuar" onclick="event.preventDefault(); return avancar();" ><em class="fa fa-arrow-right"></em>  Continuar</button>
+            <button type="button" class="btn btn-secondary btn-voltar"><em class="fa fa-angle-left"></em>  Voltar</button>
+          </div>
+        </form>
+
+        <!-- Step 2 -->
+        <form action="#" id="inputs-step-2" class="step-input-div">
+          <div class="input-block">
+            <label style="display: inline-block;" for="signup-escolaridade">Nível de escolaridade<p style="color:red;display:inline-block;">*</p></label>
+            <select id="signup-escolaridade" required>
+              <option value="">Selecione...</option>
+              <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+              <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+              <option value="Curso técnico Incompleto">Curso técnico Incompleto</option>
+              <option value="Ensino superior Incompleto">Ensino superior Incompleto</option>
+            </select>
+
+          </div>
+            <div class="input-block">
+
+            
+            <label for="signup-language">Idiomas</label>
+            <em class="fa fa-plus-circle add-language-button" onclick="return addLanguageDiv()" ></em>
+            <div id="div-idiomas">
+
+            </div>
+
+
+          </div>
+          <div class="input-block">
+            <label for="signup-extra">Capacitações adicionais</label>
+            <em class="fa fa-plus-circle add-language-button" onclick="return addExtrasDiv()" ></em>
+            <div id="div-extras">
+
+            </div>
+            <!-- <input id="signup-extra" placeholder="Cursos, conquistas, etc..." /> -->
+          </div>
+          <div class="input-block">
+            <label for="signup-objective">Objetivo</label>
+            <input type="text" maxlength="50" id="signup-objective" />
+
+            <label for="signup-resume">Resumo</label>
+            <textarea rows="5" maxlength="200" id="signup-resume"></textarea>
+          </div>
+          <div style="margin-top: 12px">
+            <button type="submit" class="btn btn-primary btn-continuar" onclick="event.preventDefault(); return avancar();" ><em class="fa fa-arrow-right"></em>  Continuar</button>
+            <button class="btn btn-secondary btn-voltar"><em class="fa fa-angle-left"></em>  Voltar</button>
+          </div>
+        </form>
+
+        <!-- Step 3 -->
+        <div id="inputs-step-3" class="step-input-div">
+          <div class="input-block">
+            <label for="signup-nome-3">Quais seus interesses?</label>
+            <br />
+            <br />
+            <ul style="list-style-type: none; display: inline; overflow: hidden">
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Programação</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">UX design</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Desenvolvimento de sistemas</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Tecnologia</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Gestão</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Administração</li>
+              <li class="div-unselected" onclick="return toogleSelectedDiv(this)">Contabilidade</li>
+            </ul>
+          </div>
+          <div style="margin-top: 12px">
+            <button disabled id="btn-continuar-step3" class="btn btn-primary btn-continuar" onclick="event.preventDefault(); return avancar();"><em class="fa fa-arrow-right"></em>  Continuar</button>
+            <button class="btn btn-secondary btn-voltar"><em class="fa fa-angle-left"></em>  Voltar</button>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <form action="#" onsubmit="event.preventDefault(); return cadastrar();" id="inputs-step-4" class="step-input-div">
+          <div id="confirmation-text"></div>
+          <div class="input-block">
+            <label style="display: inline-block;" for="signup-senha">Digite uma senha<p style="color:red;display:inline-block;">*</p></label>
+            <input type="password" maxlength="16" id="signup-senha" name="signup-senha" required oninput="return validaSenhas();" />
+          </div>
+          <div class="input-block">
+            <label style="display: inline-block;" for="signup-confirma-senha">Confirme a senha<p style="color:red;display:inline-block;">*</p></label>
+            <input type="password" maxlength="16" id="signup-confirma-senha" name="signup-confirma-senha" required oninput="return validaSenhas();"/>
+          </div>
+          <div style="margin-top: 12px">
+            <button type="submit" id="btn-continuar" class="btn btn-primary btn-continuar" disabled ><em class="fa fa-check"></em>  Finalizar</button> 
+            <button id="btn-voltar" class="btn btn-secondary btn-voltar"><em class="fa fa-angle-left"></em>  Voltar</button>
+            <div id="loader" class="loader"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="signup.js"></script>
+    <!-- Script para popular selects de estado e cidade-->
+    <script src="fillSelects.js"></script>
+  </body>
+</html>

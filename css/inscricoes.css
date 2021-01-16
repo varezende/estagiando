@@ -1,0 +1,21 @@
+﻿#div-view-vaga {
+	position: relative;
+	padding: 0 12px;
+	height: calc(100%);
+	overflow-y: scroll;
+	display: none;
+}
+#div-view-vaga.visible {
+	display: inherit;
+}
+#div-view-msg {
+	position: relative;
+	padding: 50% 12px 0;
+	text-align: center;
+	height: calc(100%);
+	overflow-y: scroll;
+	display: none;
+}
+#div-view-msg.visible {
+	display: inherit;
+}

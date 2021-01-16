@@ -1,0 +1,48 @@
+﻿.container {
+  width: 100%;
+  margin-top: 12px;
+}
+.progressbar {
+  counter-reset: step;
+}
+
+ul {
+    padding-left: 0em;
+}
+.progressbar li {
+  list-style-type: none;
+  float: left;
+  width: 25%;
+  position: relative;
+  text-align: center;
+  font-weight: 600;
+  font-size: smaller;
+  color: var(--cor-3);
+}
+.progressbar li:before {
+  /* CSS for creating steper block before the li item*/
+  content: counter(step);
+  counter-increment: step;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  border: 1px solid var(--cor-3);
+  display: block;
+  text-align: center;
+  margin: 0 auto 0px auto;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: var(--cor-2);
+}
+.progressbar li.active:before {
+  border-color: var(--cor-2);
+}
+.progressbar li.active + li:after {
+  background-color: var(--cor-2);
+}

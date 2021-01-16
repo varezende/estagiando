@@ -1,27 +1,242 @@
-{
-  "_id": 1,
-  "name": "Grupo CCR",
-  "cnpj": "010928756377407",
-  "address": {
-    "street": "123 Fake St",
-    "city": "Faketon",
-    "state": "MA",
-    "number": 10
-  },
-  "jobs": [
-    { 
-		"name": "Estágio em desenvolvimento de software",
-		"resume": "Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
-		"prerequisite": ["A partir do 4º periodo", "Cursando ciencia da computação ou sistemas de informação ou cursos similares"],
-		"salary": "R$ 1.100 + vale alimentação",
-		"interests": [ "tecnologia", "programação", "desenvolvimento de software"],
-	},
-	{ 
-		"name": "Estágio em administração",
-		"resume": "Nessa vaga o estagiário terá contato com a parte de administração da empresa",
-		"prerequisite": ["A partir do 4º periodo", "Cursando administração"],
-		"salary": "R$ 800 + vale alimentação",
-		"interests": [ "gestão", "administração" ],
-	}
-  ]  
-}
+[
+   {
+      "_id":1,
+      "name":"Empresa de Teste",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"123 Fake St",
+         "city":"Fake Town",
+         "state":"MA",
+         "number":10
+      },
+      "jobs":[
+         {
+            "name":"Estágio em desenvolvimento de software",
+            "resume":"Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
+            "prerequisite":[
+               "A partir do 4º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.100 + vale alimentação",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "desenvolvimento de software"
+            ]
+         },
+         {
+            "name":"Estágio em administração",
+            "resume":"Nessa vaga o estagiário terá contato com a parte de administração da empresa",
+            "prerequisite":[
+               "A partir do 4º periodo",
+               "Cursando administração"
+            ],
+            "salary":"R$ 800 + vale alimentação",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         }
+      ]
+   },
+   {
+      "_id":2,
+      "name":"Empresa Real",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"456 Real St",
+         "city":"Real Town",
+         "state":"CA",
+         "number":1042
+      },
+      "jobs":[
+         {
+            "name":"Estágio em administração",
+            "resume":"Nessa vaga o estagiário terá contato com a parte de administração da empresa",
+            "prerequisite":[
+               "A partir do 4º periodo",
+               "Cursando administração"
+            ],
+            "salary":"R$ 800 + vale alimentação",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         },
+         {
+            "name":"Estágio em desenvolvimento de software",
+            "resume":"Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
+            "prerequisite":[
+               "A partir do 4º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.100 + vale alimentação",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "desenvolvimento de software"
+            ]
+         }
+      ]
+   },
+   {
+      "_id":3,
+      "name":"Empresa de Exemplo",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"123 Fake St",
+         "city":"Example Town",
+         "state":"MA",
+         "number":10
+      },
+      "jobs":[
+         {
+            "name":"Estágio em Banco de dados",
+            "resume":"Nessa vaga o estagiário terá contato com Oracle SQL e seu funcionamento",
+            "prerequisite":[
+               "A partir do 6º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.500 + passe de ônibus",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "banco de dados"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         }
+      ]
+   },
+   {
+      "_id":4,
+      "name":"Empresa de Exemplo",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"123 Fake St",
+         "city":"Example Town",
+         "state":"MA",
+         "number":10
+      },
+      "jobs":[
+         {
+            "name":"Estágio em Banco de dados",
+            "resume":"Nessa vaga o estagiário terá contato com Oracle SQL e seu funcionamento",
+            "prerequisite":[
+               "A partir do 6º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.500 + passe de ônibus",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "banco de dados"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         }
+      ]
+   },
+   {
+      "_id":5,
+      "name":"Empresa de Exemplo",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"123 Fake St",
+         "city":"Example Town",
+         "state":"MA",
+         "number":10
+      },
+      "jobs":[
+         {
+            "name":"Estágio em Banco de dados",
+            "resume":"Nessa vaga o estagiário terá contato com Oracle SQL e seu funcionamento",
+            "prerequisite":[
+               "A partir do 6º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.500 + passe de ônibus",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "banco de dados"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         }
+      ]
+   },
+   {
+      "_id":6,
+      "name":"Empresa de Exemplo",
+      "cnpj":"010928756377407",
+      "address":{
+         "street":"123 Fake St",
+         "city":"Example Town",
+         "state":"MA",
+         "number":10
+      },
+      "jobs":[
+         {
+            "name":"Estágio em Banco de dados",
+            "resume":"Nessa vaga o estagiário terá contato com Oracle SQL e seu funcionamento",
+            "prerequisite":[
+               "A partir do 6º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.500 + passe de ônibus",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "banco de dados"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         }
+      ]
+   }
+]

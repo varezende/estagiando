@@ -1,6 +1,10 @@
-﻿* {
-			
+﻿:root { 
+	--cor-1: #1fab89;
+	--cor-2: #62d2a2;
+	--cor-3: #9df3c4;
+	--cor-4: #d7fbe8;
 }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -17,17 +21,17 @@ body {
 	left: 0;
 }
 .cabecalho {	
-	background-color: #1fab89;
-	color: #d7fbe8;
+	background-color: var(--cor-1);
+	color: var(--cor-4);
 	font-size: 1.5rem;
 	top: 0;
 }
 .cabecalho button {
-	background-color: #30475e;
-	color: #dddddd;
+	background-color: var(--cor-3);
+	color: var(--cor-1);
 }
 .conteudo {
-	background-color: #d7fbe8;
+	/*background-color: var(--cor-4);*/
 	overflow-y: scroll;
 	z-index: 0;
 	position: absolute;
@@ -36,46 +40,67 @@ body {
 }
 .conteudo .card  {
 	background-color: white;
-	border-color: #1fab89;
+	border-color: var(--cor-1);
 	margin-bottom: 12px;
 }
 .rodape {
-	background-color: #1fab89;
-    color: #d7fbe8;
+	background-color: var(--cor-1);
+    color: var(--cor-4);
 	text-align: right;
 	bottom: 0;
 }
 
-.div-lista-empresa {
+#div-view-empresa {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	/*background-color: var(--cor-4);*/
+	background-color: #ffffff;
+}
+#div-lista-empresa {
 	width: calc(100% - 24px);
 	margin: 12px;
 	height: 60px;
 	overflow-x: scroll;
+	
+	/* Hide scrollbar for IE, Edge and Firefox */
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+#div-lista-empresa::-webkit-scrollbar {
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	display: none;
 }
 #div-nome-empresa {
 	height: 20px;
 }
-.div-scroll-empresa {
+#div-scroll-empresa {
 	height: 60px;
 }
-.div-empresa {
+.div-box-empresa {
 	color: red;
 	width: 60px;
 	height: 60px;
 	border-radius: 10px;
 	cursor: pointer;
-	border: solid blue 2px;
+	border: solid var(--cor-1) 2px;
 	background-position: center center;
 	display: inline-block;
 	margin: 0px 6px;
+	cursor: pointer;
+	
+	-webkit-transition : border 1000ms ease-out;
+	-moz-transition : border 1000ms ease-out;
+	-o-transition : border 1000ms ease-out;
+	transition : border 1000ms ease-out;
 }
-.div-empresa:first-child {
+.div-box-empresa:first-child {
 	margin-left: 0;
 }
-.div-empresa:last-child {
+.div-box-empresa:last-child {
 	margin-right: 0;
 }
-.div-empresa.visited {
+.div-box-empresa.visited {
 	border: solid white 2px;
 }
 
@@ -84,4 +109,23 @@ body {
 	height: calc(100% - 116px);
 	margin: 0 12px;
 	color: #222831;
+}
+
+#div-view-progress {
+	position: absolute;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: calc(100% - 50px) 12px 0;
+	display: none;
+	text-align: center;
+}
+#div-view-progress.visible {
+	display: inherit;
+}
+
+#div-view-progress .progress {
+	margin-top: 12px;
 }

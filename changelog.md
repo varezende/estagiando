@@ -16,6 +16,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - JQuery
 
 
-## [1.0.0] - 2021-21-16
+## [1.0.1] - 2021-21-16
 ### Added
 - Exibir mais de uma vaga por Empresa na lsitagem das Vagas
+
+
+## [1.0.2] - 2021-21-16
+### Added
+- JQueryUI
+- Opção de arrastar vagas para a direita/esquerda, além de manter cliques em "Candidatar" e "Descartar".
+
+### Fixed
+- Escoder Scroll Bar horizontal que aparecia por cima da listagem de Empresas

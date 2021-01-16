@@ -28,3 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Escoder Scroll Bar horizontal que aparecia por cima da listagem de Empresas
+
+
+## [1.0.3] - 2021-21-16
+### Added
+- Organização da estrutura de pastas

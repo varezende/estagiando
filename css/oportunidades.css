@@ -1,11 +1,4 @@
-﻿:root { 
-	--cor-1: #1fab89;
-	--cor-2: #62d2a2;
-	--cor-3: #9df3c4;
-	--cor-4: #d7fbe8;
-}
-
-body {
+﻿body {
 	margin: 0;
 	padding: 0;
 	height: 100%;

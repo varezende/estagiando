@@ -13,12 +13,13 @@ function renderizarEmpresa(obj) {
 	
 	html += '<div class="div-box-empresa" style="background-image: url(\'./img/' + obj._id + '.jpg\');">';
 	if (obj.jobs) {
-		html += '	<div>' + obj.jobs.length + '</div>';
+		html += '	<div class="badge badge-danger">' + obj.jobs.length + '</div>';
 	}
 	html += '</div>';
 	
 	$(html).appendTo('#div-scroll-empresa').click(function() {
-		$(this).addClass('visited');
+		$('.div-box-empresa').removeClass('active');
+		$(this).addClass('visited active');
 		$('#div-nome-empresa > h5').text(obj.name);
 		$('#div-view-vaga').html('');
 		obj.jobs.forEach(function(objJob){
@@ -54,15 +55,20 @@ function renderizarVagas(obj) {
 	html += '	</div>';
 	html += '</div>';
 	
-	$(html).appendTo('#div-view-vaga').draggable({ axis: 'x' }).on('dragstop', function(a,b ) {
+	$(html).appendTo('#div-view-vaga').draggable({ axis: 'x',  scroll: true }).on('dragstop', function(a,b ) {
 		if (b && b.position) {
-			if (b.position.left > 0) {
+			console.log(b.position.left);
+			if (b.position.left > 70) {
 				aplicarVaga($(this).find('button:eq(0)')[0]);
-			} else if (b.position.left < 0) {
+			} else if (b.position.left < -70) {
 				descartarVaga($(this).find('button:eq(0)')[0]);
+			} else {
+				//$(this).css('transition', 'left .6s ease');
+				$(this).css('left', 0);
 			}
 		}
 	});
+	$('#div-view-vaga').css('height', 'calc(100% - ' + ($('#div-view-empresa').outerHeight()) + 'px)');
 }
 
 function filtrarEmpresas() {
@@ -86,6 +92,7 @@ function filtrarEmpresas() {
 	}
 
 	atualizarListaDeEmpresas();
+	$('form *:input').blur();
 }
 
 function descartarVaga(objHTML) {
@@ -93,8 +100,6 @@ function descartarVaga(objHTML) {
 	$(card).removeClass('remaining');
 	$(card).hide('slide', { direction: 'left' }, 500, function() { exibirLoading(); });
 	$(card).css('top', 'inherit');
-	
-	exibirLoading();
 }
 
 function aplicarVaga(objHTML) {
@@ -105,32 +110,33 @@ function aplicarVaga(objHTML) {
 }
 
 function exibirLoading() {
+	var $badge = $('.div-box-empresa.active > .badge');
+	var cont = $badge.text().trim();
+	if (cont == '' || Number(cont) - 1 == 0) {
+		$badge.fadeOut();
+	} else {
+		$badge.text(Number(cont) - 1);
+	}
+	
 	if ($('#div-view-vaga > .card:visible').length == 0) {
 		$('#div-view-progress > div > div').css('width', '0%');
 		$('#div-view-progress').addClass('visible');
 		setTimeout(function() {
 			$('#div-view-progress > div > div').css('width', '100%');
 			setTimeout(function() {
-				$('.div-box-empresa:not(.visited):first').click();
-				$('#div-view-progress').removeClass('visible');
-			}, 3000);
-		}, 500);
-		/*
-		var i = 1;
-		var intervalLoading = setInterval(function() {
-			$('#div-view-progress > div > div').css('width', (i * 33.3) + '%');
-			console.log('21312', i * 20);
-			if (i == 3) {
-				clearInterval(intervalLoading);
-				setTimeout(function() {
+				if ($('.div-box-empresa:not(.visited)').length > 0) {					
 					$('.div-box-empresa:not(.visited):first').click();
-					$('#div-view-progress').removeClass('visible');
-				}, 1000);
-			}
-			i++;
-		}, 1000);
-		*/
+				} else {
+					exibirFinal();
+				}
+				$('#div-view-progress').removeClass('visible');
+			}, 1500);
+		}, 500);
 	}
+}
+
+function exibirFinal() {
+	$('#div-view-vaga').html('<p style="margin-top: 50%; text-align: center;">Você visualizou todas as vagas que temos até o momento. Mas não se preocupe, te notificaremos quando surgirem novas! =)</p>')
 }
 
 var listaEmpresasGeral = [];
@@ -138,11 +144,10 @@ var listaEmpresasExibicao = [];
 $('document').ready(function() {
 	/* Definir alturas nos elementos na tela para não causar Scroll onde não deve. */
 	$('.conteudo').css('height', 'calc(100% - ' + ($('.cabecalho').outerHeight() + $('.rodape').outerHeight()) + 'px)');
-	$('.conteudo').css('top', $('.cabecalho').outerHeight() + 'px');
 	
 	/* Buscar Infos do Back (Mock). */				
 	$.ajax({
-		url: 'http://localhost/companies.json',
+		url: '../companies.json',
 		type: 'post',
 		contentType: 'application/json; charset=utf-8',
 		dataType: 'text json',

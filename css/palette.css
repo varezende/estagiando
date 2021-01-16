@@ -1,6 +1,12 @@
 ﻿:root { 
-	--cor-1: #1fab89;
-	--cor-2: #62d2a2;
-	--cor-3: #9df3c4;
-	--cor-4: #d7fbe8;
+	--cor-1: #312c51;
+    --cor-2: #48426d;
+    --cor-3: #f0c38e;
+    --cor-4: #f1aa9b;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--cor-2);
+    border-color: var(--cor-1);
 }

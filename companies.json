@@ -36,6 +36,20 @@
                "gestão",
                "administração"
             ]
+         },
+         {
+            "name":"Estágio em desenvolvimento de software",
+            "resume":"Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
+            "prerequisite":[
+               "A partir do 4º periodo",
+               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
+            ],
+            "salary":"R$ 1.100 + vale alimentação",
+            "interests":[
+               "tecnologia",
+               "programação",
+               "desenvolvimento de software"
+            ]
          }
       ]
    },
@@ -61,20 +75,6 @@
             "interests":[
                "gestão",
                "administração"
-            ]
-         },
-         {
-            "name":"Estágio em desenvolvimento de software",
-            "resume":"Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
-            "prerequisite":[
-               "A partir do 4º periodo",
-               "Cursando ciencia da computação ou sistemas de informação ou cursos similares"
-            ],
-            "salary":"R$ 1.100 + vale alimentação",
-            "interests":[
-               "tecnologia",
-               "programação",
-               "desenvolvimento de software"
             ]
          }
       ]
@@ -102,6 +102,19 @@
                "tecnologia",
                "programação",
                "banco de dados"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
             ]
          },
          {
@@ -196,6 +209,32 @@
                "gestão",
                "administração"
             ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
+         },
+         {
+            "name":"Menor Aprendiz",
+            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
+            "prerequisite":[
+               "A partir do 1º ano",
+               "Cursando Ensino Médio"
+            ],
+            "salary":"R$ 300",
+            "interests":[
+               "gestão",
+               "administração"
+            ]
          }
       ]
    },
@@ -222,19 +261,6 @@
                "tecnologia",
                "programação",
                "banco de dados"
-            ]
-         },
-         {
-            "name":"Menor Aprendiz",
-            "resume":"Nessa vaga o Menor Aprendiz ajudará a empresa na parte de administração",
-            "prerequisite":[
-               "A partir do 1º ano",
-               "Cursando Ensino Médio"
-            ],
-            "salary":"R$ 300",
-            "interests":[
-               "gestão",
-               "administração"
             ]
          }
       ]

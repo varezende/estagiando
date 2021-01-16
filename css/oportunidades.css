@@ -8,10 +8,6 @@
 .cabecalho, .rodape {	
 	width: 100%;
 	padding: 12px;
-	
-	z-index: 1;
-	position: fixed;
-	left: 0;
 }
 .cabecalho {	
 	background-color: var(--cor-1);
@@ -21,40 +17,62 @@
 }
 .cabecalho button {
 	background-color: var(--cor-3);
-	color: var(--cor-1);
+	color: var(--cor-2);
+}
+.cabecalho .div-logo {
+	width: 38px;
+	height: 38px;
+	color: var(--cor-2);
+	background-color: var(--cor-3);
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+	border-radius: .25rem;
 }
 .conteudo {
 	/*background-color: var(--cor-4);*/
-	overflow-y: scroll;
-	z-index: 0;
-	position: absolute;
 	width: 100%;
-	left: 0;
 }
 .conteudo .card  {
 	background-color: white;
-	border-color: var(--cor-1);
 	margin-bottom: 12px;
+	box-shadow: 2px 2px 8px 0px rgba(49, 44, 81, 0.5);
 }
+.conteudo .card:first-child {
+	margin-top: 12px;
+}
+
 .rodape {
 	background-color: var(--cor-1);
     color: var(--cor-4);
 	text-align: right;
 	bottom: 0;
 }
+.rodape td {
+	text-align: center;	
+    color: var(--cor-4);
+}
+.rodape td i {
+	font-size: 25px;
+}
+.rodape td i.active {
+	font-size: 25px;
+	color: var(--cor-2);
+}
+.rodape td:first-child {
+	border-right: solid var(--cor-4) 1px;
+}
+.rodape td:last-child {
+	text-align: right;
+}
 
 #div-view-empresa {
 	width: 100%;
-	position: fixed;
-	z-index: 1;
-	/*background-color: var(--cor-4);*/
-	background-color: #ffffff;
 }
 #div-lista-empresa {
-	width: calc(100% - 24px);
-	margin: 12px;
-	height: 60px;
+	height: 72px;
 	overflow-x: scroll;
+    padding: 12px 12px 0;
 	
 	/* Hide scrollbar for IE, Edge and Firefox */
 	-ms-overflow-style: none;  /* IE and Edge */
@@ -65,16 +83,24 @@
 	display: none;
 }
 #div-nome-empresa {
-	height: 20px;
+	padding: 0 12px;
+	margin: 12px auto;
 }
+
+#div-linha-empresa {
+	width: calc(100% - 24px);
+	height: 1px;
+	margin: 0 auto;
+	background-color: var(--cor-2);
+}
+
 #div-scroll-empresa {
 	height: 60px;
 }
 .div-box-empresa {
-	color: red;
 	width: 60px;
 	height: 60px;
-	border-radius: 10px;
+	border-radius: 30px;
 	cursor: pointer;
 	border: solid var(--cor-1) 2px;
 	background-position: center center;
@@ -82,10 +108,12 @@
 	margin: 0px 6px;
 	cursor: pointer;
 	
-	-webkit-transition : border 1000ms ease-out;
-	-moz-transition : border 1000ms ease-out;
-	-o-transition : border 1000ms ease-out;
-	transition : border 1000ms ease-out;
+	-webkit-transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
+	-moz-transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
+	-o-transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
+	transition : border 1000ms ease-out, width 300ms ease-out, height 300ms ease-out, margin 300ms ease-out;
+	
+	position: relative;
 }
 .div-box-empresa:first-child {
 	margin-left: 0;
@@ -94,14 +122,36 @@
 	margin-right: 0;
 }
 .div-box-empresa.visited {
-	border: solid white 2px;
+	border: solid transparent 2px;
+}
+.div-box-empresa.active {
+	width: 50px;
+	height: 50px;
+	margin: 5px;
+}
+
+.div-box-empresa > .badge {
+	/*
+	color: #fff;
+    background-color: #dc3545;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+	*/
+	
+	color: var(--cor-2);
+    background-color: white;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    border: solid var(--cor-2) 1px;
 }
 
 #div-view-vaga {
-	padding-top: 104px;
-	height: calc(100% - 116px);
-	margin: 0 12px;
-	color: #222831;
+	position: relative;
+	padding: 0 12px;
+	height: calc(100% - 104px);
+	overflow-y: scroll;
 }
 
 #div-view-progress {

@@ -43,12 +43,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Correção de bugs pequenos (Alturas de DIV e animações)
 
 
-## [1.0.4] - 2021-21-16
+## [1.0.5] - 2021-21-16
 ### Added
 - Login
 - Cadastro
 - Consultas no Back-End (Antes era Mock).
 - Versão Final
+- Página de consulta de Inscrições
 
 ### Fixed
 - Correção de bugs gerais.

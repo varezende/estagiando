@@ -1,0 +1,49 @@
+user_teen = {
+  _id: 1,
+  name: "Jo Bloggs",
+  birth: "2003-10-05",
+  cpf: "08756377407",
+  phones: ["553499778569", "553432778567"],
+  mail: "bloggs@email.com",
+  password: "cripto"
+  address: {
+    street: "123 Fake St",
+    city: "Faketon",
+    state: "MA",
+    number: 10
+  },
+  interests: [ "tecnologia", "programação", "desenvolvimento de software"],
+  education_level: "ensino superior incompleto",
+  resume: "Faço sistemas de informação na UFU..............",
+  objective: "Estágio na area da tecnologia",
+  languages: ["Ingles Intermediário"],
+  complementary_activities: ["Curso de Python", "Curso de Java"]
+}  
+
+user_company = {
+  _id: 1,
+  name: "Grupo CCR",
+  cnpj: "010928756377407",
+  address: {
+    street: "123 Fake St",
+    city: "Faketon",
+    state: "MA",
+    number: 10
+  },
+  jobs: [
+    { 
+		name: "Estágio em desenvolvimento de software",
+		resume: "Nessa vaga o estagiário terá contato com as mais diversas tecnologias",
+		prerequisite: ["A partir do 4º periodo", "Cursando ciencia da computação ou sistemas de informação ou cursos similares"],
+		salary: "R$ 1.100 + vale alimentação",
+		interests: [ "tecnologia", "programação", "desenvolvimento de software"],
+	},
+	{ 
+		name: "Estágio em administração",
+		resume: "Nessa vaga o estagiário terá contato com a parte de administração da empresa",
+		prerequisite: ["A partir do 4º periodo", "Cursando administração"],
+		salary: "R$ 800 + vale alimentação",
+		interests: [ "gestão", "administração" ],
+	}
+  ]  
+}

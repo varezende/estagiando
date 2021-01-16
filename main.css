@@ -1,0 +1,87 @@
+﻿* {
+			
+}
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-size: 16px;
+}
+
+.cabecalho, .rodape {	
+	width: 100%;
+	padding: 12px;
+	
+	z-index: 1;
+	position: fixed;
+	left: 0;
+}
+.cabecalho {	
+	background-color: #1fab89;
+	color: #d7fbe8;
+	font-size: 1.5rem;
+	top: 0;
+}
+.cabecalho button {
+	background-color: #30475e;
+	color: #dddddd;
+}
+.conteudo {
+	background-color: #d7fbe8;
+	overflow-y: scroll;
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+.conteudo .card  {
+	background-color: white;
+	border-color: #1fab89;
+	margin-bottom: 12px;
+}
+.rodape {
+	background-color: #1fab89;
+    color: #d7fbe8;
+	text-align: right;
+	bottom: 0;
+}
+
+.div-lista-empresa {
+	width: calc(100% - 24px);
+	margin: 12px;
+	height: 60px;
+	overflow-x: scroll;
+}
+#div-nome-empresa {
+	height: 20px;
+}
+.div-scroll-empresa {
+	height: 60px;
+}
+.div-empresa {
+	color: red;
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+	cursor: pointer;
+	border: solid blue 2px;
+	background-position: center center;
+	display: inline-block;
+	margin: 0px 6px;
+}
+.div-empresa:first-child {
+	margin-left: 0;
+}
+.div-empresa:last-child {
+	margin-right: 0;
+}
+.div-empresa.visited {
+	border: solid white 2px;
+}
+
+#div-view-vaga {
+	padding-top: 104px;
+	height: calc(100% - 116px);
+	margin: 0 12px;
+	color: #222831;
+}

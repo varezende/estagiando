@@ -10,8 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Primeiro Commit
 - index.html: Tela Inicial
-- mobile.html: Tela inicial mobile.
+- mobile.html: Tela inicial mobile
 - Bootstrap
 - FontAwesome
 - JQuery
 
+
+## [1.0.0] - 2021-21-16
+### Added
+- Exibir mais de uma vaga por Empresa na lsitagem das Vagas

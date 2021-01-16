@@ -33,3 +33,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.3] - 2021-21-16
 ### Added
 - Organização da estrutura de pastas
+
+
+## [1.0.4] - 2021-21-16
+### Added
+- Definição de Cores
+
+### Fixed
+- Correção de bugs pequenos (Alturas de DIV e animações)
